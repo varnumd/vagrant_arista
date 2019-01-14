@@ -85,7 +85,7 @@ Vagrant.configure(2) do |config|
     leaf1.vm.network 'private_network', virtualbox__intnet: 's1l1', auto_config: false
     leaf1.vm.network 'private_network', virtualbox__intnet: 's2l1', auto_config: false
     leaf1.vm.network 'private_network', virtualbox__intnet: 'l1l2', auto_config: false
-    #leaf1.vm.network "forwarded_port", guest: 22, host: 20122
+    leaf1.vm.network "forwarded_port", guest: 22, host: 20122
 
     leaf1.vm.provider "virtualbox" do |v|
       v.customize ["modifyvm", :id, "--nicpromisc2", "allow-vms"]
@@ -113,7 +113,7 @@ Vagrant.configure(2) do |config|
     leaf2.vm.network 'private_network', virtualbox__intnet: 's1l2', auto_config: false
     leaf2.vm.network 'private_network', virtualbox__intnet: 's2l2', auto_config: false
     leaf2.vm.network 'private_network', virtualbox__intnet: 'l1l2', auto_config: false
-    #leaf2.vm.network "forwarded_port", guest: 22, host: 20222
+    leaf2.vm.network "forwarded_port", guest: 22, host: 20222
 
     leaf2.vm.provider "virtualbox" do |v|
       v.customize ["modifyvm", :id, "--nicpromisc2", "allow-vms"]
