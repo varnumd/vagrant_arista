@@ -189,7 +189,7 @@ Vagrant.configure(2) do |config|
     end
 
   config.vm.define 'mgmt' do |mgmt|
-    mgmt.vm.box = "bento/ubuntu-18.04"
+    mgmt.vm.box = "ubuntu/trusty64"
     mgmt.vm.hostname = "mgmt"
     mgmt.vm.provision "shell", path: "scripts/mgmt.sh"
     mgmt.vm.network 'private_network', virtualbox__intnet: 'mgmt', ip: "10.1.1.10"
